@@ -639,3 +639,40 @@ function dragElement(elmnt) {
 /* ===========================
    DRAGGABLE CALCULATOR ends
 =========================== */
+
+
+const calculatorButtons=[
+
+"sin","cos","tan","log","ln",
+
+"√","x²","xʸ","π","e",
+
+"(",")","C","⌫","/",
+
+"7","8","9","*","%",
+
+"4","5","6","-","1/x",
+
+"1","2","3","+","±",
+
+"0",".","="
+
+];
+
+let html="";
+
+calculatorButtons.forEach(btn=>{
+
+html+=`
+
+<button class="calcBtn">
+
+${btn}
+
+</button>
+
+`;
+
+});
+
+document.getElementById("calcButtons").innerHTML=html;
