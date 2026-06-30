@@ -557,3 +557,20 @@ document.addEventListener("keydown", function(e){
 
 document.getElementById("examDate").innerHTML =
 new Date().toLocaleDateString();
+
+// calculator part start
+// Open Calculator
+document.getElementById("calculatorBtn").onclick=function(){
+
+    document.getElementById("calculatorWindow").style.display="block";
+
+}
+
+// Close Calculator
+document.getElementById("closeCalculator").onclick=function(){
+
+    document.getElementById("calculatorWindow").style.display="none";
+
+}
+
+//calculator part ends
