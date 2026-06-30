@@ -86,3 +86,114 @@ body{
     white-space: nowrap;
 }
 
+
+
+/* ===========================================
+   HEADER
+=========================================== */
+
+.header{
+
+    background:#0b3d91;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 30px;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+
+}
+
+.logo-section{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.logo{
+
+    width:70px;
+
+    height:70px;
+
+    background:white;
+
+    border-radius:50%;
+
+    object-fit:contain;
+
+}
+
+.logo-section h1{
+
+    margin:0;
+
+    font-size:34px;
+
+    letter-spacing:1px;
+
+}
+
+.logo-section p{
+
+    margin:3px 0 0;
+
+    font-size:16px;
+
+    color:#e3e3e3;
+
+}
+
+.timer-section{
+
+    text-align:center;
+
+}
+
+.timer-title{
+
+    font-size:16px;
+
+}
+
+#timer{
+
+    font-size:34px;
+
+    font-weight:bold;
+
+    color:#ffd54f;
+
+}
+
+/* ===========================================
+   INFORMATION BAR
+=========================================== */
+
+.info-bar{
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    padding:12px;
+
+    font-size:17px;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.08);
+
+}
