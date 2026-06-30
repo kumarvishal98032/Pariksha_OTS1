@@ -553,3 +553,7 @@ document.addEventListener("keydown", function(e){
     }
 
 });
+
+
+document.getElementById("examDate").innerHTML =
+new Date().toLocaleDateString();
