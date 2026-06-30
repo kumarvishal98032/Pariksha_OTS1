@@ -295,13 +295,13 @@ body{
 
 .btn-submit{
 
-    background:#198754;
+    background:#dc3545;
 
 }
 
 .btn-submit:hover{
 
-    background:#157347;
+    background:#bb2d3b;
 
     transform:translateY(-2px);
 
