@@ -356,6 +356,34 @@ function handleButton(value){
         return;
 
     }
+
+       // ==========================
+    // Log Base 10
+    // ==========================
+
+    if(value==="log"){
+
+        expression += "log10(";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+       // ==========================
+    // Natural Log
+    // ==========================
+
+    if(value==="ln"){
+
+        expression += "log(";
+
+        display.value = expression;
+
+        return;
+
+    }
    
        // ==========================
     // Equal
