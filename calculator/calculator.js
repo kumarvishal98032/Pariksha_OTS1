@@ -313,7 +313,49 @@ function handleButton(value){
 
     }
 
-   
+
+       // ==========================
+    // Sine
+    // ==========================
+
+    if(value==="sin"){
+
+        expression += "sin(";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+
+       // ==========================
+    // Cosine
+    // ==========================
+
+    if(value==="cos"){
+
+        expression += "cos(";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+       // ==========================
+    // Tangent
+    // ==========================
+
+    if(value==="tan"){
+
+        expression += "tan(";
+
+        display.value = expression;
+
+        return;
+
+    }
    
        // ==========================
     // Equal
