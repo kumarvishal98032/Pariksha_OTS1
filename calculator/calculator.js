@@ -215,4 +215,41 @@ function handleButton(value){
         return;
 
     }
+
+       // ==========================
+    // Equal
+    // ==========================
+
+    if(value==="="){
+
+        try{
+
+            let exp = expression;
+
+            // Convert display operators to JavaScript operators
+
+            exp = exp.replace(/×/g,"*");
+            exp = exp.replace(/÷/g,"/");
+
+            // Calculate using Math.js
+
+            const result = math.evaluate(exp);
+
+            expression = result.toString();
+
+            display.value = expression;
+
+        }
+
+        catch(error){
+
+            display.value = "Error";
+
+            expression = "";
+
+        }
+
+        return;
+
+    }
 }
