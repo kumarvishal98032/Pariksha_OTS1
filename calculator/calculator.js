@@ -216,6 +216,45 @@ function handleButton(value){
 
     }
 
+
+    // ==========================
+    // Clear
+    // ==========================
+
+    if(value==="C"){
+
+        expression="";
+
+        display.value="0";
+
+        return;
+
+    }
+
+       // ==========================
+    // Backspace
+    // ==========================
+
+    if(value==="⌫"){
+
+        expression=expression.slice(0,-1);
+
+        if(expression===""){
+
+            display.value="0";
+
+        }
+
+        else{
+
+            display.value=expression;
+
+        }
+
+        return;
+
+    }
+   
        // ==========================
     // Equal
     // ==========================
