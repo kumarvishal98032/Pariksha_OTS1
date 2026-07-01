@@ -384,6 +384,48 @@ function handleButton(value){
         return;
 
     }
+
+       // ==========================
+    // Square
+    // ==========================
+
+    if(value==="x²"){
+
+        expression += "^2";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+       // ==========================
+    // Power
+    // ==========================
+
+    if(value==="xʸ"){
+
+        expression += "^";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+       // ==========================
+    // Reciprocal
+    // ==========================
+
+    if(value==="1/x"){
+
+        expression = "1/(" + expression + ")";
+
+        display.value = expression;
+
+        return;
+
+    }
    
        // ==========================
     // Equal
