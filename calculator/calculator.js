@@ -22,6 +22,14 @@ const calculatorButtons = [
 
 const buttonContainer = document.getElementById("calcButtons");
 
+/* -------------------------
+   Calculator Variables
+-------------------------- */
+
+let expression = "";
+
+const display = document.getElementById("calcDisplay");
+
 calculatorButtons.forEach(text=>{
 
     const btn=document.createElement("button");
@@ -48,6 +56,12 @@ calculatorButtons.forEach(text=>{
 
     buttonContainer.appendChild(btn);
 
+   btn.addEventListener("click", function () {
+
+    handleButton(text);
+
+});
+   
 });
 
 
@@ -122,6 +136,53 @@ function dragElement(elmnt){
         document.onmouseup=null;
 
         document.onmousemove=null;
+
+    }
+
+}
+
+
+/* ==========================================
+   Button Handler
+========================================== */
+
+function handleButton(value){
+
+    // Ignore hidden buttons
+
+    if(value==="") return;
+
+    // Numbers
+
+    if("0123456789".includes(value)){
+
+        if(expression==="0"){
+
+            expression=value;
+
+        }
+
+        else{
+
+            expression+=value;
+
+        }
+
+        display.value=expression;
+
+        return;
+
+    }
+
+    // Decimal
+
+    if(value==="."){
+
+        expression+=value;
+
+        display.value=expression;
+
+        return;
 
     }
 
