@@ -268,6 +268,52 @@ function handleButton(value){
         return;
 
     }
+
+
+       // ==========================
+    // PI
+    // ==========================
+
+    if(value==="π"){
+
+        expression += "pi";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+       // ==========================
+    // Euler Number
+    // ==========================
+
+    if(value==="e"){
+
+        expression += "e";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+
+       // ==========================
+    // Square Root
+    // ==========================
+
+    if(value==="√"){
+
+        expression += "sqrt(";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+   
    
        // ==========================
     // Equal
