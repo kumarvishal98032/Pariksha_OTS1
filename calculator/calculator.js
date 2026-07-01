@@ -1,6 +1,6 @@
-/* ======================================
+/* ==========================================
    PARIKSHA Scientific Calculator
-====================================== */
+========================================== */
 
 const calculatorButtons = [
 
@@ -31,11 +31,98 @@ calculatorButtons.forEach(text=>{
     btn.innerText=text;
 
     if(text===""){
-
         btn.style.visibility="hidden";
+    }
 
+    if(["sin","cos","tan","√","π","log","ln","x²","xʸ","e","1/x","±","%","(",")"].includes(text)){
+        btn.classList.add("scientific");
+    }
+
+    if(["÷","×","-","+","="].includes(text)){
+        btn.classList.add("operator");
+    }
+
+    if(["C","⌫"].includes(text)){
+        btn.classList.add("danger");
     }
 
     buttonContainer.appendChild(btn);
 
 });
+
+
+/* ---------- Open Calculator ---------- */
+
+document.getElementById("calculatorBtn").onclick=function(){
+
+    document.getElementById("calculatorWindow").style.display="block";
+
+};
+
+
+/* ---------- Close Calculator ---------- */
+
+document.getElementById("closeCalculator").onclick=function(){
+
+    document.getElementById("calculatorWindow").style.display="none";
+
+};
+
+
+/* ---------- Drag Calculator ---------- */
+
+dragElement(document.getElementById("calculatorWindow"));
+
+function dragElement(elmnt){
+
+    const header=document.getElementById("calculatorHeader");
+
+    let pos1=0,pos2=0,pos3=0,pos4=0;
+
+    header.onmousedown=dragMouseDown;
+
+    function dragMouseDown(e){
+
+        e.preventDefault();
+
+        pos3=e.clientX;
+
+        pos4=e.clientY;
+
+        document.onmouseup=closeDragElement;
+
+        document.onmousemove=elementDrag;
+
+    }
+
+    function elementDrag(e){
+
+        e.preventDefault();
+
+        pos1=pos3-e.clientX;
+
+        pos2=pos4-e.clientY;
+
+        pos3=e.clientX;
+
+        pos4=e.clientY;
+
+        elmnt.style.top=(elmnt.offsetTop-pos2)+"px";
+
+        elmnt.style.left=(elmnt.offsetLeft-pos1)+"px";
+
+        elmnt.style.right="auto";
+
+        elmnt.style.bottom="auto";
+
+    }
+
+    function closeDragElement(){
+
+        document.onmouseup=null;
+
+        document.onmousemove=null;
+
+    }
+
+}
