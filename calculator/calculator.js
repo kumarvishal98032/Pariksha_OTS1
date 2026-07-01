@@ -487,7 +487,7 @@ function handleButton(value){
 
             expression = result.toString();
 
-            display.value = expression;
+            display.value = formatResult(result);
 
         }
 
@@ -503,3 +503,41 @@ function handleButton(value){
 
     }
 }
+
+
+/* ==========================================
+   Scientific Notation Formatter
+========================================== */
+
+function formatResult(result){
+
+    if(!isFinite(result)) return result;
+
+    let num = Number(result);
+
+    // Large or very small numbers
+
+    if((Math.abs(num)>=1e12) || (Math.abs(num)<1e-9 && num!==0)){
+
+        const exp = num.toExponential(10);
+
+        const parts = exp.split("e");
+
+        const mantissa = parseFloat(parts[0]);
+
+        const exponent = Number(parts[1]);
+
+        return mantissa + " ×10^" + exponent;
+
+    }
+
+    // Remove unnecessary decimals
+
+    if(Number.isInteger(num))
+
+        return num.toString();
+
+    return parseFloat(num.toPrecision(12)).toString();
+
+}
+
