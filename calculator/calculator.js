@@ -186,7 +186,7 @@ function handleButton(value){
 
     }
 
-}
+
 
     // Operators
 
@@ -215,3 +215,4 @@ function handleButton(value){
         return;
 
     }
+}
