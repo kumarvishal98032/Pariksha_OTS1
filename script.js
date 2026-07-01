@@ -6,7 +6,7 @@ let questions = [];
 let current = 0;
 let answers = [];
 
-fetch("https://script.google.com/macros/s/AKfycbyepGGUp8TouZ3-B7uJOiGb5pY4XiqAQLGRfBLuBDuuWJKb3ooJ5z5OFubyJNDauSC4LQ/exec?action=settings")
+fetch("https://script.google.com/macros/s/AKfycbwYxb_76YCNwI--aE1FD5mxrJbNoObZSSVt6UdkX9ZXKWw6hdN4WUpElhQ5vi_HmJD6/exec?action=settings")
 .then(response => response.json())
 .then(data => {
 
@@ -50,7 +50,7 @@ loadQuestions();
 
 function loadQuestions() {
 
-    fetch("https://script.google.com/macros/s/AKfycbyepGGUp8TouZ3-B7uJOiGb5pY4XiqAQLGRfBLuBDuuWJKb3ooJ5z5OFubyJNDauSC4LQ/exec?action=questions")
+    fetch("https://script.google.com/macros/s/AKfycbwYxb_76YCNwI--aE1FD5mxrJbNoObZSSVt6UdkX9ZXKWw6hdN4WUpElhQ5vi_HmJD6/exec?action=questions")
     .then(response => response.json())
     .then(data => {
 
@@ -303,7 +303,7 @@ function submitTest(){
 
     // SAVE RESULT
 
-    fetch("https://script.google.com/macros/s/AKfycbyepGGUp8TouZ3-B7uJOiGb5pY4XiqAQLGRfBLuBDuuWJKb3ooJ5z5OFubyJNDauSC4LQ/exec",{
+    fetch("https://script.google.com/macros/s/AKfycbwYxb_76YCNwI--aE1FD5mxrJbNoObZSSVt6UdkX9ZXKWw6hdN4WUpElhQ5vi_HmJD6/exec",{
 
         method:"POST",
         mode:"no-cors",
