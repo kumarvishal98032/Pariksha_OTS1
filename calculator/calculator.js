@@ -216,7 +216,21 @@ function handleButton(value){
 
     }
 
+       // ==========================
+    // Parentheses
+    // ==========================
 
+    if(value==="(" || value===")"){
+
+        expression += value;
+
+        display.value = expression;
+
+        return;
+
+    }
+
+   
     // ==========================
     // Clear
     // ==========================
