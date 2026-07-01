@@ -187,3 +187,31 @@ function handleButton(value){
     }
 
 }
+
+    // Operators
+
+    if(["+","-","×","÷"].includes(value)){
+
+        if(expression==="") return;
+
+        const last = expression.slice(-1);
+
+        // Prevent two operators together
+
+        if(["+","-","×","÷"].includes(last)){
+
+            expression =
+                expression.slice(0,-1) + value;
+
+        }
+        else{
+
+            expression += value;
+
+        }
+
+        display.value = expression;
+
+        return;
+
+    }
