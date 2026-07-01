@@ -426,6 +426,45 @@ function handleButton(value){
         return;
 
     }
+
+
+       // ==========================
+    // Percentage
+    // ==========================
+
+    if(value==="%"){
+
+        expression += "/100";
+
+        display.value = expression;
+
+        return;
+
+    }
+
+
+       // ==========================
+    // Change Sign
+    // ==========================
+
+    if(value==="±"){
+
+        if(expression.startsWith("-")){
+
+            expression = expression.substring(1);
+
+        }else{
+
+            expression = "-" + expression;
+
+        }
+
+        display.value = expression;
+
+        return;
+
+    }
+
    
        // ==========================
     // Equal
