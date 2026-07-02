@@ -43,9 +43,11 @@ if (now > end) {
 
   
 
-  loadQuestions();
+  t = Number(examSettings.duration) * 60;
 
-    t = Number(examSettings.duration) * 60;
+startTimer();
+
+loadQuestions();
 
 });
 
@@ -395,30 +397,40 @@ function submitTest(){
 // =======================
 
 let t = 0;
+let timerInterval = null;
 
-setInterval(()=>{
+function startTimer() {
 
-    let m = Math.floor(t/60);
-    let s = t%60;
+    if (timerInterval) clearInterval(timerInterval);
 
-    let el = document.getElementById('timer');
+    timerInterval = setInterval(() => {
 
-    if(el){
+        let m = Math.floor(t / 60);
+        let s = t % 60;
 
-        el.innerHTML =
-            String(m).padStart(2,'0') + ':' +
-            String(s).padStart(2,'0');
-    }
+        let el = document.getElementById("timer");
 
-    t--;
+        if (el) {
+            el.innerHTML =
+                String(m).padStart(2, "0") +
+                ":" +
+                String(s).padStart(2, "0");
+        }
 
-    if(t < 0){
+        if (t <= 0) {
 
-        submitTest();
+            clearInterval(timerInterval);
 
-    }
+            submitTest();
 
-},1000);
+            return;
+        }
+
+        t--;
+
+    }, 1000);
+
+}
 
 
 // ===== ANTI-CHEATING =====
