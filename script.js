@@ -19,6 +19,12 @@ document.getElementById("testName").innerText =
 
 document.getElementById("subjectName").innerText =
     examSettings.subject;
+
+    if (String(examSettings.calculator).toUpperCase() === "NO") {
+
+    document.getElementById("calculatorBtn").style.display = "none";
+
+}
     //2726
     let now = new Date();
  let start = new Date(data.start.replace(" ", "T"));
