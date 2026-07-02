@@ -363,9 +363,50 @@ let subject = examSettings.subject;
     });
 
 
-    // SHOW RESULT
+// SHOW RESULT ONLY IF ALLOWED
+
+if (String(examSettings.showResultImmediately).toUpperCase() !== "YES") {
 
     document.body.innerHTML = `
+
+    <div style="
+        max-width:700px;
+        margin:100px auto;
+        text-align:center;
+        font-family:Arial;
+        background:white;
+        padding:40px;
+        border-radius:12px;
+        box-shadow:0 0 15px rgba(0,0,0,.15);
+    ">
+
+        <h1 style="color:green;">
+            ✅ Responses Submitted Successfully
+        </h1>
+
+        <hr>
+
+        <h2>
+            Thank you for appearing in the examination.
+        </h2>
+
+        <p style="font-size:18px;">
+            Your responses have been recorded successfully.
+        </p>
+
+        <p style="font-size:18px;color:#d35400;">
+            Results will be declared later.
+        </p>
+
+    </div>
+    `;
+
+    return;
+}
+
+// SHOW RESULT
+
+document.body.innerHTML = ` `
 
     <div style="font-family:Arial;
                 padding:30px;
