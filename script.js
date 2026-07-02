@@ -13,6 +13,12 @@ fetch("https://script.google.com/macros/s/AKfycbwYxb_76YCNwI--aE1FD5mxrJbNoObZSS
 .then(data => {
 // added 2726
     examSettings = data;
+
+document.getElementById("testName").innerText =
+    examSettings.testName;
+
+document.getElementById("subjectName").innerText =
+    examSettings.subject;
     //2726
     let now = new Date();
  let start = new Date(data.start.replace(" ", "T"));
