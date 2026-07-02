@@ -76,15 +76,7 @@ function loadQuestions() {
 
         questions = data;
     // Randomize question order
-       // questions.sort(() => Math.random() - 0.5);
-        questions = data;
-
-// Shuffle only if enabled in Settings
-if (String(examSettings.questionShuffle).toUpperCase() === "YES") {
-
-    questions.sort(() => Math.random() - 0.5);
-
-}
+        questions.sort(() => Math.random() - 0.5);
         
         questions.forEach(q => {
 
@@ -363,11 +355,9 @@ let subject = examSettings.subject;
     });
 
 
+    // SHOW RESULT
 
-
-// SHOW RESULT
-
-document.body.innerHTML = ` `
+    document.body.innerHTML = `
 
     <div style="font-family:Arial;
                 padding:30px;
@@ -706,6 +696,3 @@ function dragElement(elmnt) {
 /* ===========================
    DRAGGABLE CALCULATOR ends
 =========================== */
-
-
-
