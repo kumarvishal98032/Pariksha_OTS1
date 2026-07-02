@@ -76,7 +76,15 @@ function loadQuestions() {
 
         questions = data;
     // Randomize question order
-        questions.sort(() => Math.random() - 0.5);
+       // questions.sort(() => Math.random() - 0.5);
+        questions = data;
+
+// Shuffle only if enabled in Settings
+if (String(examSettings.questionShuffle).toUpperCase() === "YES") {
+
+    questions.sort(() => Math.random() - 0.5);
+
+}
         
         questions.forEach(q => {
 
