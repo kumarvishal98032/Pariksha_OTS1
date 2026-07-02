@@ -41,9 +41,11 @@ if (now > end) {
     return;
 }
 
-  t = Number(examSettings.duration) * 60;
+  
 
   loadQuestions();
+
+    t = Number(examSettings.duration) * 60;
 
 });
 
