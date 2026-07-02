@@ -305,8 +305,12 @@ function submitTest(){
 
     }
 
-    let name =
-        document.getElementById("studentName").value;
+let name =
+    document.getElementById("studentName").value;
+
+let testID = examSettings.testID;
+let testName = examSettings.testName;
+let subject = examSettings.subject;
 
 
     // SAVE RESULT
@@ -320,15 +324,21 @@ function submitTest(){
             "Content-Type":"application/json"
         },
 
+
         body:JSON.stringify({
 
-            name:name,
-            score:score,
-            correct:correct,
-            wrong:wrong,
-            unattempted:unattempted
+    testID:testID,
+    testName:testName,
+    subject:subject,
 
-        })
+    name:name,
+
+    score:score,
+    correct:correct,
+    wrong:wrong,
+    unattempted:unattempted
+
+})
 
     });
 
