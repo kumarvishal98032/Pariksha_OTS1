@@ -262,13 +262,13 @@ function submitTest(){
         else if(answers[i] === questions[i].answer){
 
             correct++;
-            score += 4;
+            score += Number(examSettings.positiveMarks);
         }
 
         else{
 
             wrong++;
-            score -= 1;
+            score -= Number(examSettings.negativeMarks);
 
             report += `
             <div style="border:1px solid #ddd;
@@ -381,7 +381,10 @@ let subject = examSettings.subject;
         <p><b>Wrong Answers:</b> ${wrong}</p>
         <p><b>Unattempted:</b> ${unattempted}</p>
         <p><b>Accuracy:</b> ${accuracy}%</p>
+        <p><b>Positive Marks:</b> +${examSettings.positiveMarks}</p>
 
+        <p><b>Negative Marks:</b> -${examSettings.negativeMarks}</p>
+        
         <hr>
 
         <h2>Final Score</h2>
