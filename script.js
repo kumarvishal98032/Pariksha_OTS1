@@ -391,17 +391,25 @@ let subject = examSettings.subject;
 
         <h1>${score} Marks</h1>
 
-        <h2>Performance</h2>
+        <h2>Result</h2>
 
-        <h3>
-        ${
-            score >= 180 ? "Outstanding ⭐" :
-            score >= 160 ? "Excellent ✅" :
-            score >= 140 ? "Good 👍" :
-            score >= 120 ? "Average 📘" :
-            "Needs Improvement 📚"
-        }
-        </h3>
+<p><b>Passing Marks :</b> ${examSettings.passingMarks}</p>
+
+<h2 style="
+color:${
+score >= Number(examSettings.passingMarks)
+? "green"
+: "red"
+};
+">
+
+${
+score >= Number(examSettings.passingMarks)
+? "✅ PASS"
+: "❌ FAIL"
+}
+
+</h2>
 
         <button onclick="window.print()">
         📄 Download / Print PDF
