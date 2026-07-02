@@ -6,10 +6,14 @@ let questions = [];
 let current = 0;
 let answers = [];
 
+let examSettings = {};
+
 fetch("https://script.google.com/macros/s/AKfycbwYxb_76YCNwI--aE1FD5mxrJbNoObZSSVt6UdkX9ZXKWw6hdN4WUpElhQ5vi_HmJD6/exec?action=settings")
 .then(response => response.json())
 .then(data => {
-
+// added 2726
+    examSettings = data;
+    //2726
     let now = new Date();
  let start = new Date(data.start.replace(" ", "T"));
 let end = new Date(data.end.replace(" ", "T"));
@@ -37,9 +41,9 @@ if (now > end) {
     return;
 }
 
-loadQuestions();
+  t = Number(examSettings.duration) * 60;
 
-    loadQuestions();
+  loadQuestions();
 
 });
 
@@ -388,7 +392,7 @@ function submitTest(){
 // TIMER
 // =======================
 
-let t = 3600;
+let t = 0;
 
 setInterval(()=>{
 
