@@ -358,13 +358,19 @@ let subject = examSettings.subject;
                 max-width:900px;
                 margin:auto;">
 
-        <h1>Test Result</h1>
+       <h1>${examSettings.testName}</h1>
+
+       <h2>Test Result</h2>
 
         <hr>
 
         <h2>Student Information</h2>
 
         <p><b>Name:</b> ${name}</p>
+
+        <p><b>Subject:</b> ${examSettings.subject}</p>
+
+        <p><b>Test ID:</b> ${examSettings.testID}</p>
 
         <hr>
 
